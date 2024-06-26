@@ -44,7 +44,7 @@ h2 {
   font-family: 'Saira Extra Condensed', serif;
   font-size: 1.35rem;
   display: inline; /* Make sure the link is inline */
-  margin-left: 0.5rem; /* Add some space between the title and link */ }
+  margin-left: 1rem; /* Add some space between the title and link */ }
 
 .subheading {
   text-transform: uppercase;
