@@ -139,8 +139,8 @@ a {
 .button {
   --bg: #000;
   --hover-bg: #ea8445;
-  --hover-text: #000;
-  color: #fff;
+  --hover-text: #e4662c;
+  color: #ec721b;
   cursor: pointer;
   border: 1px solid var(--bg);
   border-radius: 4px;
