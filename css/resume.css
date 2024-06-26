@@ -44,7 +44,7 @@ h2 {
   font-family: 'Saira Extra Condensed', serif;
   font-size: 1.35rem;
   display: inline; /* Make sure the link is inline */
-  margin-left: 1rem; /* Add some space between the title and link */ }
+  margin-left: 3rem; /* Add some space between the title and link */ }
 
 .subheading {
   text-transform: uppercase;
@@ -133,3 +133,30 @@ a {
   color: #BD5D38; }
   a:hover, a:focus, a:active {
     color: #824027; }
+
+
+/* inspired form gumroad website */
+.button {
+  --bg: #000;
+  --hover-bg: #ea8445;
+  --hover-text: #000;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+  padding: 0.8em 2em;
+  background: var(--bg);
+  transition: 0.2s;
+}
+
+.button:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+.button:active {
+  transform: translate(0);
+  box-shadow: none;
+}
