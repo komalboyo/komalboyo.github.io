@@ -21,6 +21,39 @@
   });
 })();
 
+// ===== Sidenote toggle (mobile) =====
+document.querySelectorAll('.sn-num').forEach(function (num) {
+  num.addEventListener('click', function () {
+    var wrapper = num.closest('.sidenote-wrapper');
+    if (wrapper) {
+      var note = wrapper.querySelector('.sidenote');
+      if (note) {
+        note.classList.toggle('active');
+      }
+    }
+  });
+});
+
+// ===== Temperature slider =====
+(function () {
+  var slider = document.getElementById('temp-slider');
+  var display = document.getElementById('temp-value');
+  if (!slider || !display) return;
+
+  function update() {
+    var val = parseFloat(slider.value);
+    display.textContent = val.toFixed(2);
+    document.querySelectorAll('[data-temp]').forEach(function (el) {
+      var threshold = parseFloat(el.dataset.temp);
+      el.style.opacity = val >= threshold ? '1' : '0';
+      el.style.pointerEvents = val >= threshold ? '' : 'none';
+    });
+  }
+
+  slider.addEventListener('input', update);
+  update();
+})();
+
 // ===== Smooth scroll for anchor links =====
 document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   anchor.addEventListener('click', function (e) {
