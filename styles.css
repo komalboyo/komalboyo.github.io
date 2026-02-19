@@ -587,6 +587,85 @@ section h3 {
   font-weight: 500;
 }
 
+/* ===== Writing Section ===== */
+.writing-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+.cursor-blink {
+  color: var(--link);
+  font-weight: 300;
+  animation: cursorBlink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.featured-essay {
+  display: block;
+  padding: 28px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 36px;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.featured-essay:hover {
+  border-color: var(--text-muted);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  color: inherit;
+}
+
+[data-theme="dark"] .featured-essay:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.featured-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--link);
+  margin-bottom: 12px;
+}
+
+.featured-title {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.featured-tagline {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.featured-read {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--link);
+  transition: color 0.2s;
+}
+
+.featured-essay:hover .featured-read {
+  color: var(--link-hover);
+}
+
 /* ===== Essay Page ===== */
 .essay {
   padding-top: 12px;
