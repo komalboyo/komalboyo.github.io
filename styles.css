@@ -711,6 +711,23 @@ section h3 {
   }
 }
 
+/* Left sidenotes: author's witty asides */
+.sidenote-left {
+  font-style: italic;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+}
+
+/* Wide screens: left margin notes */
+@media (min-width: 1100px) {
+  .sidenote-left {
+    float: left;
+    clear: left;
+    margin-left: -220px;
+    margin-right: 0;
+    width: 180px;
+  }
+}
+
 /* Narrow screens: inline toggle */
 @media (max-width: 1099px) {
   .sidenote {
@@ -842,6 +859,12 @@ section h3 {
   font-size: 0.82rem;
   color: var(--text-muted);
   display: block;
+}
+
+.essay-author {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
 
 .essay-body p {
