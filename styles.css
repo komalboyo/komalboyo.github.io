@@ -132,6 +132,22 @@ main {
   color: var(--text);
 }
 
+.nav-opinions {
+  background: var(--link);
+  color: #fff !important;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-opinions:hover {
+  background: var(--link-hover);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
 .theme-toggle {
   background: none;
   border: none;
