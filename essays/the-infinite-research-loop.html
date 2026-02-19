@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Infinite Research Loop: AGI? — Komal Mathur</title>
+  <meta name="description" content="Everyone has a date for AGI. The dates keep changing. Maybe the question is wrong.">
+  <meta property="og:title" content="The Infinite Research Loop: AGI? — Komal Mathur">
+  <meta property="og:description" content="Everyone has a date for AGI. The dates keep changing. Maybe the question is wrong.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../" class="logo-link" aria-label="Home">
+        <svg class="km-logo" viewBox="0 0 34 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 1v20M2 11l8-10M2 11l8 10"/>
+          <path d="M18 21V1l7 13 7-13v20"/>
+        </svg>
+      </a>
+      <div class="nav-right">
+        <a href="../#experience">Experience</a>
+        <a href="../#research">Research</a>
+        <a href="../#projects">Projects</a>
+        <a href="../#writing">Writing</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="essay">
+
+      <header class="essay-header">
+        <a href="../#writing" class="essay-back">&larr; Back</a>
+        <h1 class="essay-title">The Infinite Research Loop: AGI?</h1>
+        <p class="essay-subtitle">Everyone has a date for AGI. The dates keep changing. Maybe the question is wrong.</p>
+        <time class="essay-date">February 2026</time>
+      </header>
+
+      <div class="essay-body">
+
+        <p>Sam Altman thinks OpenAI has basically built AGI. Demis Hassabis thinks it is five to ten years away. They are both the CEO of an AI company. They are both talking their book. And they are both, in their own peculiar way, missing the point.</p>
+
+        <p>The question "when will we have AGI?" has become the "are we there yet?" of the technology industry. Asked with the same impatience, the same disregard for the complexity of the journey, and the same implicit assumption that arrival is the only thing that matters. Every few months, someone important says something confident, and the internet performs its familiar ritual: the optimists cite the quote as prophecy, the pessimists dissect it as marketing, and everyone with a Substack writes a thousand words about which camp is correct. Both camps, for the record, have excellent newsletters.</p>
+
+        <hr class="essay-break">
+
+        <p>Let us look at what the prophets are actually saying, because the details are funnier than the headlines suggest.</p>
+
+        <p>Altman wrote in late 2024 that OpenAI is "now confident we know how to build AGI as we have traditionally understood it." I want you to sit with that sentence for a moment. The qualifier "as we have traditionally understood it" is doing an extraordinary amount of heavy lifting. It is the rhetorical equivalent of saying "I have basically climbed Everest, as we have traditionally understood climbing." It invites you to feel the excitement of the first half while the second half quietly renegotiates the terms. In a later interview, he acknowledged that AGI "has become a very sloppy term," which is a remarkable thing to say about the concept your entire company is named after pursuing.</p>
+
+        <p>Hassabis, speaking at the India AI Impact Summit in early 2026, went bigger. AGI, he said, would have "10x the impact of the Industrial Revolution" and could arrive within the decade. He compared its significance to the discovery of fire and the invention of electricity. He then added, almost without pausing, that "such transformative power demands caution and rigorous oversight." This is the AI executive's equivalent of flooring the accelerator while also recommending seatbelts. At Davos, he noted that his timeline is "a little bit longer" than Amodei's, the way someone might say their marathon is "a little bit longer" than a half-marathon. A meaningful distinction dressed as a minor one.</p>
+
+        <p>These are two of the most informed people on the planet when it comes to AI capabilities. They work with the actual systems. They see the benchmarks, the loss curves, the emergent behaviors. And yet their predictions, stripped of the careful language, amount to: "somewhere between now and ten years, something very important will happen, and we cannot tell you exactly what it is or how we will know."</p>
+
+        <p>This is not a criticism. It is a diagnosis. The honest answer to "when will we have AGI?" is that nobody knows, and the people who sound most confident are the ones most incentivized to perform confidence. The interesting question is somewhere else entirely.</p>
+
+        <hr class="essay-break">
+
+        <p>Here is what I actually find interesting. Not the timeline, but the loop.</p>
+
+        <p>AI systems are now materially contributing to AI research. Not as a metaphor. Not as a press release. As a daily operational reality. Models are writing code that trains models. They are suggesting architectures, debugging training runs, interpreting experimental results, generating hypotheses. The thing being studied has become an active participant in the study. If this sounds like it should be a bigger deal, that is because it is a bigger deal, and we are somehow treating it as a footnote to the timeline debate.</p>
+
+        <p>Think about what a research loop normally looks like. A human has an insight. They design an experiment. They run it. They interpret the results. They have another insight, or they do not, and they go home and try again tomorrow. The bottleneck has always been the human in the loop: their sleep schedule, their cognitive bandwidth, their unfortunate tendency to get distracted by email and departmental politics and the existential question of whether their PhD was a good idea. The loop is slow because humans are slow. Not stupid. Just slow.</p>
+
+        <p>Now imagine that loop where the insight, the experiment design, the execution, the interpretation, and the next insight can all be partially automated. Not fully. Not yet. But partially, and getting less partial every quarter. The human does not leave the loop. They move from operator to supervisor. The loop does not become instant. It becomes faster. And faster loops compound in ways that linear intuition is genuinely bad at predicting.</p>
+
+        <p>This is what I mean by the infinite research loop. Not a straight line marching toward AGI, but a spiral: each turn produces systems that are slightly better at producing the next turn. The output of the loop feeds back into the input. The researcher and the subject begin to blur. The question is not where this spiral ends. It is whether it converges, diverges, or does something nobody has a word for yet.</p>
+
+        <hr class="essay-break">
+
+        <p>The timeline debate treats AGI as a destination. A finish line. A product launch with a keynote and a waitlist. You either have it or you do not. But that framing is borrowed from consumer electronics, not from the actual dynamics of what is being built. It is like asking "when will we have the internet?" and expecting a date. The internet arrived gradually, then suddenly, and the "gradually" part is where all the consequential decisions were made, mostly by people who did not realize they were making them.</p>
+
+        <p>The same pattern is unfolding here. Every incremental capability matters. Every time a model gets slightly better at writing code, slightly better at reading papers, slightly better at identifying its own mistakes, the loop tightens by a fraction. No single tightening is "AGI." But the cumulative effect of a thousand tightenings might be something that, in retrospect, we should have been paying much closer attention to while we were busy arguing about definitions.</p>
+
+        <p>Altman seems to sense this, even if his incentives push him toward grander framing. When he talks about 2025 seeing "the first AI agents join the workforce," he is describing a tightening of the loop, not the arrival of AGI. When Hassabis describes AI systems that could "come up with entirely new explanations for the universe," he is describing a different tightening, further along the spiral, but still part of the same continuous process. Neither of them is describing a light switch moment, even though both have professional reasons to make it sound like one.</p>
+
+        <hr class="essay-break">
+
+        <p>I think the reason the timeline question persists despite being obviously unanswerable is that it is comforting. A date gives you something to plan around. It tells you when to panic, when to invest, when to retrain, when to write your congressional representative. "Sometime in the next decade, in ways we cannot precisely specify" does not fit on a slide. It does not generate engagement. It does not make for a good Davos panel title.</p>
+
+        <p>But it is honest. And honest is what the discourse needs more of, because the alternative is a conversation conducted entirely in vibes and venture capital, where every quarter brings a new claim of AGI proximity and every claim is evaluated not on its merits but on how it makes the evaluator's portfolio feel.</p>
+
+        <p>The loop is tightening. That much is not hype. AI systems are getting better at doing AI research, and AI research is getting better at building AI systems. This is a feedback dynamic that deserves serious, sustained attention from people who are not trying to sell you something. What it does not deserve is a date.</p>
+
+        <hr class="essay-break">
+
+        <p>So where does that leave us? Not with an answer, which is the correct outcome for a question that was malformed to begin with. AGI is not a light switch. It is a dimmer. And someone has been turning it up for years. Slowly, then less slowly, then in ways that make "slowly" feel like a quaint memory.</p>
+
+        <p>The interesting question was never when it reaches full brightness. It is what we are doing in the room while the light keeps changing. Whether we are rearranging the furniture thoughtfully or just standing around arguing about the wattage.</p>
+
+        <p>Right now, from what I can tell, it is mostly the wattage.</p>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:komlixmathur@gmail.com">Email</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Komal Mathur</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
