@@ -587,6 +587,98 @@ section h3 {
   font-weight: 500;
 }
 
+/* ===== Essay Page ===== */
+.essay {
+  padding-top: 12px;
+}
+
+.essay-header {
+  margin-bottom: 48px;
+}
+
+.essay-back {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: inline-block;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.essay-back:hover {
+  color: var(--link);
+}
+
+.essay-title {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  text-wrap: balance;
+}
+
+.essay-subtitle {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.essay-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.essay-body p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.essay-body p em {
+  color: var(--text);
+  font-style: italic;
+}
+
+.essay-body p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.essay-break {
+  border: none;
+  text-align: center;
+  margin: 36px 0;
+}
+
+.essay-break::after {
+  content: "\2022\2009\2022\2009\2022";
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 600px) {
+  .essay-title {
+    font-size: 1.8rem;
+  }
+
+  .essay-subtitle {
+    font-size: 1rem;
+  }
+
+  .essay-body p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+}
+
 /* ===== Footer ===== */
 footer {
   max-width: 640px;
