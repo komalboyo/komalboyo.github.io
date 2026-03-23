@@ -21,6 +21,26 @@
   });
 })();
 
+// ===== Mobile Menu Toggle =====
+(function () {
+  var menuToggle = document.getElementById('menu-toggle');
+  var navLinks = document.getElementById('nav-links');
+  if (!menuToggle || !navLinks) return;
+
+  menuToggle.addEventListener('click', function () {
+    menuToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu when a nav link is tapped
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      menuToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+})();
+
 // ===== Sidenote toggle (mobile) =====
 document.querySelectorAll('.sn-num').forEach(function (num) {
   num.addEventListener('click', function () {
@@ -64,3 +84,4 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     }
   });
 });
+

@@ -93,7 +93,6 @@ main {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo-link {
@@ -115,23 +114,58 @@ main {
   flex-shrink: 0;
 }
 
-.nav-right {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-left: auto;
+  margin-right: 24px;
 }
 
-.nav-right a {
+.nav-links a {
   font-size: 0.875rem;
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.nav-right a:hover {
+.nav-links a:hover {
   color: var(--text);
 }
 
+/* ===== Hamburger Menu ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 12px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--text-secondary);
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 
 .theme-toggle {
   background: none;
@@ -945,24 +979,152 @@ footer {
   color: var(--text-muted);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  main {
-    padding-top: 80px;
+/* ===== Responsive: Tablet ===== */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 20px;
   }
 
-  .nav-right {
+  .nav-links {
     gap: 16px;
+    margin-right: 16px;
   }
 
-  .nav-right a {
+  .nav-links a {
     font-size: 0.8rem;
   }
 
-  section h2 {
+  .featured-essay {
+    padding: 20px;
+  }
+
+  .featured-title {
     font-size: 1.3rem;
   }
 
+  .temp-slider {
+    width: 70px;
+  }
+}
+
+/* ===== Responsive: Mobile ===== */
+@media (max-width: 600px) {
+  main {
+    padding: 76px 16px 48px;
+  }
+
+  .nav {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  /* Show hamburger, hide desktop nav links */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .nav-links a:active {
+    background: var(--bg-secondary);
+  }
+
+  /* Bio */
+  .bio-name {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+
+  .bio p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  /* Sections */
+  section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .section-rule {
+    margin: 32px 0;
+  }
+
+  /* Experience */
+  .exp-header {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-header h3 {
+    font-size: 0.9rem;
+  }
+
+  .exp li {
+    font-size: 0.85rem;
+  }
+
+  /* Education */
+  .edu-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Opinions / Temperature */
+  .opinions-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .temp-slider {
+    width: 100px;
+  }
+
+  /* Featured essay card */
+  .featured-essay {
+    padding: 18px;
+    margin-bottom: 28px;
+  }
+
+  .featured-title {
+    font-size: 1.2rem;
+  }
+
+  .featured-tagline {
+    font-size: 0.95rem;
+  }
+
+  /* Entry links */
   .entry-link {
     font-size: 1.05rem;
   }
@@ -976,17 +1138,45 @@ footer {
     min-width: auto;
   }
 
-  .edu-header {
-    flex-direction: column;
-    gap: 2px;
+  /* Footer */
+  footer {
+    padding: 24px 16px 36px;
   }
 
-  .exp-header {
-    flex-direction: column;
-    gap: 0;
+  .footer-links a {
+    font-size: 0.8rem;
   }
 
-  .section-rule {
-    margin: 36px 0;
+  .footer-dot {
+    margin: 0 6px;
+  }
+}
+
+/* ===== Responsive: Small phones ===== */
+@media (max-width: 380px) {
+  main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .bio-name {
+    font-size: 1.6rem;
+  }
+
+  .featured-essay {
+    padding: 14px;
+  }
+
+  .featured-title {
+    font-size: 1.1rem;
+  }
+
+  .project-tags {
+    gap: 4px;
+  }
+
+  .project-tags span {
+    font-size: 0.68rem;
+    padding: 2px 8px;
   }
 }

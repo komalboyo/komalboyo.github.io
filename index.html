@@ -23,16 +23,19 @@
           <path d="M18 21V1l7 13 7-13v20"/>
         </svg>
       </a>
-      <div class="nav-right">
+      <div class="nav-links" id="nav-links">
         <a href="#experience">Experience</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#opinions">Opinions</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
       </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
@@ -70,6 +73,11 @@
             <span class="exp-company">Stage OTT</span>
           </div>
           <time>February 2026 &ndash; Present</time>
+          <ul>
+            <li>Automated outbound calling pipeline, reducing cost to 1/4th of the previous system</li>
+            <li>Deployed autoresearch at industry scale for content and market intelligence</li>
+            <li>Built chatbot-driven games that increased user retention by 10% on day 1</li>
+          </ul>
         </div>
 
         <div class="exp">
@@ -234,6 +242,33 @@
 
         <div class="project-item">
           <div class="project-item-header">
+            <h3>Niffler</h3>
+            <a href="https://goniffler.com" target="_blank" rel="noopener noreferrer">&nearr;</a>
+          </div>
+          <p>A personal knowledge graph for X&thinsp;&mdash;&thinsp;save tweets with one click, let AI organize them, and explore your saved knowledge through a 3D graph. Open source, self-hostable, no tracking.</p>
+          <div class="project-tags">
+            <span>Node.js</span>
+            <span>SQLite</span>
+            <span>Chrome Extension</span>
+            <span>Claude</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-item-header">
+            <h3>AutoInterpret</h3>
+            <a href="https://github.com/komalboyo/autointerpret" target="_blank" rel="noopener noreferrer">&nearr;</a>
+          </div>
+          <p>AI agent that explores whether neural architecture search can discover more interpretable network designs&thinsp;&mdash;&thinsp;automated experiment loops with interpretability scoring, causal ablation, and circuit analysis.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Neural Architecture Search</span>
+            <span>Mechanistic Interpretability</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-item-header">
             <h3>LockStep</h3>
             <a href="#" target="_blank" rel="noopener noreferrer">&nearr;</a>
           </div>
@@ -257,32 +292,6 @@
             <span>MongoDB</span>
             <span>Express</span>
             <span>Vercel</span>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-item-header">
-            <h3>Delphi</h3>
-            <a href="#" target="_blank" rel="noopener noreferrer">&nearr;</a>
-          </div>
-          <p>A trading bot grounded in behavioral finance&thinsp;&mdash;&thinsp;models cognitive biases, market sentiment, and crowd psychology to identify mispriced assets and contrarian entry points.</p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Sentiment Analysis</span>
-            <span>Behavioral Finance</span>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-item-header">
-            <h3>The Logit</h3>
-            <a href="https://news-komalboyos-projects.vercel.app/" target="_blank" rel="noopener noreferrer">&nearr;</a>
-          </div>
-          <p>AI-powered newsletter that curates, summarizes, and contextualizes the latest developments in machine learning and AI research.</p>
-          <div class="project-tags">
-            <span>Next.js</span>
-            <span>GPT-4</span>
-            <span>Automation</span>
           </div>
         </div>
 
@@ -358,8 +367,7 @@
           <div class="entry-meta">
             <time data-temp="0.3">Coming soon</time>
           </div>
-          <h3><a class="entry-link placeholder-link">The Alignment Tax and Who Pays It</a></h3>
-          <p class="entry-desc" data-temp="0.3">Making AI safe costs something. The question nobody wants to answer is who bears that cost.</p>
+          <h3><a class="entry-link placeholder-link">Building in the Age of Builders</a></h3>
         </article>
 
       </div>
