@@ -29,6 +29,267 @@
   --tag-text: #9a978f;
 }
 
+[data-theme="disco"] {
+  color-scheme: dark;
+  --bg: #08080f;
+  --bg-secondary: #10101a;
+  --text: #e8e6f0;
+  --text-secondary: #b0aec8;
+  --text-muted: #8a88a0;
+  --link: #ff2d95;
+  --link-hover: #ff6eb4;
+  --border: #1a1a2e;
+  --selection-bg: rgba(255, 45, 149, 0.3);
+  --tag-bg: #1a1a2e;
+  --tag-text: #00ffd5;
+  --neon-magenta: #ff2d95;
+  --neon-cyan: #00ffd5;
+  --neon-green: #39ff14;
+}
+
+/* ===== Disco: Grain overlay ===== */
+[data-theme="disco"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ===== Disco: Scanlines ===== */
+[data-theme="disco"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ===== Disco: Animated gradient background ===== */
+[data-theme="disco"] body {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 45, 149, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 255, 213, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 90%, rgba(57, 255, 20, 0.03) 0%, transparent 60%),
+    var(--bg);
+}
+
+/* ===== Disco: Glass header ===== */
+[data-theme="disco"] .site-header {
+  background: rgba(8, 8, 15, 0.75);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom-color: rgba(255, 45, 149, 0.25);
+  box-shadow: 0 1px 20px rgba(255, 45, 149, 0.08);
+}
+
+/* ===== Disco: 3D perspective on main ===== */
+[data-theme="disco"] main {
+  perspective: 1200px;
+}
+
+/* ===== Disco: Neon glow headings ===== */
+[data-theme="disco"] .bio-name {
+  text-shadow:
+    0 0 10px rgba(255, 45, 149, 0.6),
+    0 0 30px rgba(255, 45, 149, 0.3),
+    0 0 60px rgba(255, 45, 149, 0.1);
+}
+
+[data-theme="disco"] section h2 {
+  text-shadow:
+    0 0 8px rgba(0, 255, 213, 0.5),
+    0 0 25px rgba(0, 255, 213, 0.2);
+}
+
+[data-theme="disco"] .essay-title {
+  text-shadow:
+    0 0 10px rgba(255, 45, 149, 0.6),
+    0 0 30px rgba(255, 45, 149, 0.3);
+}
+
+/* ===== Disco: Chromatic aberration logo ===== */
+[data-theme="disco"] .km-logo {
+  filter:
+    drop-shadow(1.5px 0 0 rgba(255, 45, 149, 0.7))
+    drop-shadow(-1.5px 0 0 rgba(0, 255, 213, 0.7));
+  transition: filter 0.4s ease;
+}
+
+[data-theme="disco"] .logo-link:hover .km-logo {
+  filter:
+    drop-shadow(2.5px 0 0 rgba(255, 45, 149, 0.9))
+    drop-shadow(-2.5px 0 0 rgba(0, 255, 213, 0.9));
+}
+
+/* ===== Disco: Section rules — animated gradient ===== */
+[data-theme="disco"] .section-rule {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, var(--neon-magenta), var(--neon-cyan), var(--neon-green), var(--neon-magenta));
+  background-size: 300% 100%;
+  animation: disco-gradient 6s linear infinite;
+}
+
+@keyframes disco-gradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ===== Disco: Featured essay — 3D tilt card ===== */
+[data-theme="disco"] .featured-essay {
+  border-color: rgba(255, 45, 149, 0.3);
+  background: linear-gradient(135deg, rgba(255, 45, 149, 0.04), rgba(0, 255, 213, 0.02));
+  box-shadow:
+    0 0 15px rgba(255, 45, 149, 0.1),
+    inset 0 0 15px rgba(255, 45, 149, 0.03);
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform;
+}
+
+[data-theme="disco"] .featured-essay:hover {
+  border-color: rgba(255, 45, 149, 0.6);
+  box-shadow:
+    0 8px 40px rgba(255, 45, 149, 0.2),
+    inset 0 0 20px rgba(255, 45, 149, 0.05);
+}
+
+/* ===== Disco: Project items — smooth depth hover ===== */
+[data-theme="disco"] .project-item {
+  border-bottom-color: var(--border);
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.35s ease, background 0.35s ease;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+[data-theme="disco"] .project-item:hover {
+  transform: translateY(-2px) translateZ(10px);
+  border-bottom-color: var(--neon-cyan);
+  background: rgba(0, 255, 213, 0.03);
+}
+
+/* ===== Disco: Links — neon underline animation ===== */
+[data-theme="disco"] a:not(.logo-link):not(.featured-essay):not(.nav-links a) {
+  position: relative;
+}
+
+[data-theme="disco"] .essay-body a,
+[data-theme="disco"] .bio-cv-link a,
+[data-theme="disco"] .pub-link a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--neon-magenta), var(--neon-magenta));
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s;
+}
+
+[data-theme="disco"] .essay-body a:hover,
+[data-theme="disco"] .bio-cv-link a:hover,
+[data-theme="disco"] .pub-link a:hover {
+  background-size: 100% 1px;
+}
+
+/* ===== Disco: Monospace labels ===== */
+[data-theme="disco"] .subsection,
+[data-theme="disco"] .skill-group h3,
+[data-theme="disco"] .temp-label,
+[data-theme="disco"] .featured-tag,
+[data-theme="disco"] .tag-review,
+[data-theme="disco"] .project-tags span {
+  font-family: 'Courier New', 'Consolas', monospace;
+  letter-spacing: 0.08em;
+}
+
+/* ===== Disco: Tags — neon pills ===== */
+[data-theme="disco"] .project-tags span {
+  border-color: rgba(0, 255, 213, 0.2);
+  color: var(--neon-cyan);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+[data-theme="disco"] .project-tags span:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 8px rgba(0, 255, 213, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ===== Disco: Cursor blink — green neon ===== */
+[data-theme="disco"] .cursor-blink {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green), 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+/* ===== Disco: Slider — cyan neon ===== */
+[data-theme="disco"] .temp-slider {
+  background: var(--border);
+}
+
+[data-theme="disco"] .temp-slider::-webkit-slider-thumb {
+  background: var(--neon-cyan);
+  box-shadow: 0 0 8px var(--neon-cyan), 0 0 20px rgba(0, 255, 213, 0.3);
+}
+
+[data-theme="disco"] .temp-slider::-moz-range-thumb {
+  background: var(--neon-cyan);
+  box-shadow: 0 0 8px var(--neon-cyan), 0 0 20px rgba(0, 255, 213, 0.3);
+}
+
+/* ===== Disco: Smooth entrance for sections ===== */
+[data-theme="disco"] section {
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ===== Disco: Nav links — glow on hover ===== */
+[data-theme="disco"] .nav-links a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px rgba(0, 255, 213, 0.4);
+}
+
+/* ===== Disco: Footer — subtle glow ===== */
+[data-theme="disco"] footer {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--neon-magenta), var(--neon-cyan), transparent) 1;
+}
+
+[data-theme="disco"] .footer-links a:hover {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 8px rgba(255, 45, 149, 0.4);
+}
+
+/* ===== Disco: Experience entries — hover lift ===== */
+[data-theme="disco"] .exp {
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 8px 12px;
+  margin: -8px -12px;
+  border-radius: 4px;
+}
+
+[data-theme="disco"] .exp:hover {
+  transform: translateX(4px);
+  background: rgba(255, 45, 149, 0.02);
+}
+
+/* ===== Disco: Selection color ===== */
+[data-theme="disco"] ::selection {
+  background: rgba(255, 45, 149, 0.3);
+  color: #fff;
+}
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
   margin: 0;
@@ -195,10 +456,13 @@ main {
   color: var(--text);
 }
 
-/* Show/hide sun and moon icons based on theme */
+/* Show/hide theme icons: light=sun, dark=moon, disco=star */
 .icon-moon { display: none; }
+.icon-disco { display: none; }
 [data-theme="dark"] .icon-sun { display: none; }
 [data-theme="dark"] .icon-moon { display: block; }
+[data-theme="disco"] .icon-sun { display: none; }
+[data-theme="disco"] .icon-disco { display: block; }
 
 /* ===== Section Rules ===== */
 .section-rule {
