@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building in the Age of Builders — Komal Mathur</title>
+  <meta name="description" content="Steve Jobs was right. Just not about the part you think.">
+  <meta property="og:title" content="Building in the Age of Builders — Komal Mathur">
+  <meta property="og:description" content="Steve Jobs was right. Just not about the part you think.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../" class="logo-link" aria-label="Home">
+        <svg class="km-logo" viewBox="0 0 34 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 1v20M2 11l8-10M2 11l8 10"/>
+          <path d="M18 21V1l7 13 7-13v20"/>
+        </svg>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="../#experience">Experience</a>
+        <a href="../#research">Research</a>
+        <a href="../#projects">Projects</a>
+        <a href="../#opinions">Opinions</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="essay">
+
+      <header class="essay-header">
+        <a href="../#opinions" class="essay-back">&larr; Back</a>
+        <h1 class="essay-title">Building in the Age of Builders</h1>
+        <p class="essay-subtitle">Steve Jobs was right. Just not about the part you think.</p>
+        <time class="essay-date">March 2026</time>
+        <p class="essay-author">Komal Mathur · 1st in CS, Manipal Institute of Technology</p>
+      </header>
+
+      <div class="essay-body">
+
+        <p>Steve Jobs told <em>Business Week</em> in 1998 that people do not know what they want until you show it to them. He used this to justify ignoring market research, following taste, building the thing nobody asked for. It became gospel. Every founder with a half-formed idea and a Figma prototype has quoted it at least once, usually to explain why they have not talked to a single customer.</p>
+
+        <p>Jobs meant it as a philosophy of vision. The industry heard it as permission to skip the homework.</p>
+
+        <hr class="essay-break">
+
+        <p>Here is what Jobs did not say, because it was so obvious to him it did not need saying: he had done the homework already. He knew his customers the way a novelist knows their characters. Not from surveys. From obsessive, almost unreasonable attention to how people actually live with technology. What frustrates them. What delights them. What they reach for at 6 AM and what they throw across the room at midnight. <span class="sidenote-wrapper"><sup class="sn-num">1</sup><span class="sidenote"><sup>1</sup> "You've got to start with the customer experience and work back toward the technology, not the other way around." Jobs said this at WWDC in 1997. It gets cited less, because it is less convenient.</span></span></p>
+
+        <p>The intuition was not a shortcut. It was the product of a lifetime of paying attention. And the distance between "people do not know what they want" and "start with the customer experience" is the distance between what most founders hear and what Jobs actually meant.</p>
+
+        <hr class="essay-break">
+
+        <p>We are living through what might be the easiest time in human history to build something. A single developer with a laptop and an API key can ship in a weekend what would have taken a team of twelve an entire quarter to build five years ago. Frameworks handle the plumbing. AI writes the boilerplate. Deployment is a git push. The friction between "I have an idea" and "it is live" has collapsed to almost nothing, and it is collapsing further every month.</p>
+
+        <p>This is, in theory, wonderful. In practice, it means the flood has arrived.</p>
+
+        <p>Every problem worth solving now has forty solutions, most of them built by someone who saw a trending post, spun up a repo, and shipped before the discourse moved on. <span class="sidenote-wrapper sidenote-wrapper-left">The barrier to entry has not just been lowered. It has been removed.<sup class="sn-num sn-sym">*</sup><span class="sidenote sidenote-left"><sup>*</sup> The App Store had 1.8 million apps in 2024. Most of them are weather apps that want to be subscription businesses.</span></span> And when everyone can build, building is no longer the advantage. It is the baseline. The thing that gets you into the room but does not get you a seat.</p>
+
+        <p>Peter Thiel wrote in <em>Zero to One</em> that all failed companies are the same: they failed to escape competition. He was talking about monopoly theory, but the principle applies at the product level with equal force. If what you have built can be recreated by a motivated stranger with a weekend, a credit card, and access to the same documentation you used, then what you have built is not a product. It is a feature. And features get absorbed, cloned, or rendered free by the next platform update.</p>
+
+        <hr class="essay-break">
+
+        <p>So if building is not the moat, what is?</p>
+
+        <p>The uncomfortable answer, uncomfortable because it cannot be solved with code, is knowing who you are building for. Not in the abstract. Not "millennials who care about productivity." In the specific, granular, almost invasive detail that lets you anticipate what a user needs before they open a support ticket.</p>
+
+        <p>What ticks them off. What they have tried and abandoned. What they complain about to friends but never bother to put in a feedback form. What makes them <em>pay</em>. Not download. Not sign up. <span class="sidenote-wrapper"><em>Pay.</em><sup class="sn-num">2</sup><span class="sidenote"><sup>2</sup> "First-time founders are obsessed with product. Second-time founders are obsessed with distribution." Justin Kan, co-founder of Twitch. He would know.</span></span> There is a canyon between signing up and paying, and most products fall into it without making a sound.</p>
+
+        <p>Jeff Bezos built the most valuable company on earth not by out-engineering his competitors, though he did that too, but by understanding his customer with a precision that bordered on surveillance. "We start with what the customer needs and we work backwards," he said, so many times it stopped sounding like strategy and started sounding like a nervous tic. It was both. And it worked because it was not a slogan. It was an operating principle enforced at every level of the company, from the empty chair in every meeting to the six-page memos that replaced slide decks.</p>
+
+        <p>This is what separates products that generate revenue from products that generate GitHub stars. Not better code. Not cleaner architecture. Not a more elegant onboarding flow. A deeper understanding of the human being on the other side of the screen. What they want, what they <em>think</em> they want, and the gap between the two, which is where all the money lives.</p>
+
+        <hr class="essay-break">
+
+        <p>Here is the part that should make you nervous.</p>
+
+        <p>The window for this to matter is not infinite. The market is getting noisier by the day. Not by the quarter. By the day. Every product launch competes with a hundred others for the same sliver of attention. Every Show HN is buried within hours. The amount of software being produced is growing exponentially while the amount of human attention available to evaluate it remains, stubbornly and biologically, fixed.</p>
+
+        <p><span class="sidenote-wrapper sidenote-wrapper-left">Thiel was right about something else, too.<sup class="sn-num sn-sym">&dagger;</sup><span class="sidenote sidenote-left"><sup>&dagger;</sup> Thiel is right about an uncomfortable number of things, which is itself uncomfortable.</span></span> "Poor distribution, not product, is the number one cause of failure." He wrote that in 2014. It was true then. It is violently true now. You can build the best product in your category and lose to someone with a worse product and a better understanding of where their users spend their Tuesday afternoons. Distribution is not a growth team you hire after launch. It is a worldview. And it starts with knowing, with genuine specificity, who you are trying to reach and what the texture of their daily frustration actually feels like.</p>
+
+        <p>The irony that I am still in college while writing this is not lost on me. <span class="sidenote-wrapper">The irony, in fact, <em>is</em> the point.<sup class="sn-num">3</sup><span class="sidenote"><sup>3</sup> Typing this between a machine learning lecture and a deadline I am almost certainly going to miss.</span></span> The cracked kid in college can build your product. Probably in less time than it took you, and possibly better. That is the reality now. The question is whether the cracked kid in college <em>knows your customer</em>. Whether they have sat with the problem long enough to feel it in their own life, or whether they saw an opportunity on Twitter and moved fast. Moving fast is not a strategy. It is a metabolic rate. Everyone under twenty-five has it. It does not compound.</p>
+
+        <p>What compounds is understanding. The kind that only comes from living inside a problem, not looking at it from the outside and deciding it seems interesting enough to build for. <span class="sidenote-wrapper sidenote-wrapper-left"><sup class="sn-num sn-sym">&Dagger;</sup><span class="sidenote sidenote-left"><sup>&Dagger;</sup> "Your margin is my opportunity." Bezos said that about pricing. It applies just as well to attention. Your user's unresolved frustration is someone else's opening.</span></span> And the clock is running. Roughly a thousand days from now, anything that has not already found its audience will not find one. Not because the product was bad. Because nobody will hear it over the sound of everything else.</p>
+
+        <hr class="essay-break">
+
+        <p>People do not know what they want until you show it to them. But you do not know what to show them until you know who they are. That second part is the whole game. It always was.</p>
+
+        <p>Sounds so meta, right? I know. Sometimes I surprise myself.</p>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:komlixmathur@gmail.com">Email</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Komal Mathur</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
