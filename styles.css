@@ -1,5 +1,6 @@
 /* ===== Custom Properties ===== */
 :root {
+  color-scheme: light;
   --bg: #fafaf7;
   --bg-secondary: #f2f1ed;
   --text: #1a1a1a;
@@ -14,6 +15,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --bg: #161618;
   --bg-secondary: #1e1e22;
   --text: #e0ddd8;
