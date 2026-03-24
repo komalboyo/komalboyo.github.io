@@ -378,10 +378,7 @@ section h3 {
   gap: 28px;
 }
 
-.pub {
-  padding-left: 16px;
-  border-left: 2px solid var(--border);
-}
+.pub {}
 
 .pub-title {
   font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
