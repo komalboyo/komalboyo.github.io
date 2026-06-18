@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stairway to Heaven — Komal Mathur</title>
+  <meta name="description" content="An existential (and slightly sophomoric) attempt at a dissertation of Stairway to Heaven, by Led Zeppelin.">
+  <meta property="og:title" content="Stairway to Heaven — Komal Mathur">
+  <meta property="og:description" content="The horrors of having to choose, and the perils of over-intellectualising things.">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="stairway.css">
+</head>
+<body class="stairway">
+
+  <!-- Atmospheric scene: misty mountains + a stairway into the light -->
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <ellipse class="halo summit-glow" cx="720" cy="300" rx="200" ry="150"/>
+      <!-- stars (visible in dark / disco themes) -->
+      <circle class="star" cx="180" cy="140" r="1.8" style="animation-delay:0s"/>
+      <circle class="star" cx="320" cy="90" r="1.3" style="animation-delay:1.2s"/>
+      <circle class="star" cx="500" cy="180" r="2" style="animation-delay:2.1s"/>
+      <circle class="star" cx="960" cy="120" r="1.6" style="animation-delay:0.6s"/>
+      <circle class="star" cx="1120" cy="200" r="1.2" style="animation-delay:1.8s"/>
+      <circle class="star" cx="1280" cy="110" r="2.1" style="animation-delay:2.6s"/>
+      <circle class="star" cx="1360" cy="260" r="1.4" style="animation-delay:0.9s"/>
+      <circle class="star" cx="120" cy="300" r="1.3" style="animation-delay:3.1s"/>
+      <circle class="star" cx="640" cy="70" r="1.5" style="animation-delay:2.4s"/>
+      <circle class="star" cx="840" cy="220" r="1.2" style="animation-delay:1.5s"/>
+      <circle class="star" cx="1040" cy="320" r="1.6" style="animation-delay:3.4s"/>
+      <circle class="star" cx="260" cy="240" r="1.4" style="animation-delay:0.3s"/>
+      <!-- the stairway -->
+      <g class="stair">
+        <path d="M640 880 L705 330"/>
+        <path d="M800 880 L735 330"/>
+        <line x1="642" y1="860" x2="798" y2="860"/>
+        <line x1="648" y1="810" x2="792" y2="810"/>
+        <line x1="654" y1="760" x2="786" y2="760"/>
+        <line x1="660" y1="710" x2="780" y2="710"/>
+        <line x1="666" y1="660" x2="774" y2="660"/>
+        <line x1="672" y1="610" x2="768" y2="610"/>
+        <line x1="678" y1="560" x2="762" y2="560"/>
+        <line x1="684" y1="510" x2="756" y2="510"/>
+        <line x1="690" y1="460" x2="750" y2="460"/>
+        <line x1="696" y1="410" x2="744" y2="410"/>
+        <line x1="701" y1="360" x2="739" y2="360"/>
+      </g>
+      <!-- mountains -->
+      <polygon class="mtn-far" points="0,900 0,620 180,680 360,560 540,640 720,520 900,630 1080,540 1260,650 1440,580 1440,900"/>
+      <polygon class="mtn-near" points="0,900 0,740 220,786 430,690 640,760 820,706 1040,772 1240,712 1440,762 1440,900"/>
+    </svg>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../" class="logo-link" aria-label="Home">
+        <svg class="km-logo" viewBox="0 0 34 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 1v20M2 11l8-10M2 11l8 10"/>
+          <path d="M18 21V1l7 13 7-13v20"/>
+        </svg>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="../#experience">Experience</a>
+        <a href="../#research">Research</a>
+        <a href="../#projects">Projects</a>
+        <a href="../#opinions">Opinions</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-disco" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <article class="essay manuscript">
+
+      <header class="essay-header manuscript-hero">
+        <a href="../#opinions" class="essay-back">&larr; Back</a>
+
+        <div class="hero-illustration">
+          <div class="guitar" title="strum">
+            <svg class="guitar-svg" viewBox="0 0 120 290" xmlns="http://www.w3.org/2000/svg">
+              <g class="guitar-art" style="stroke:var(--gold); stroke-width:1.6; fill:none; stroke-linecap:round; stroke-linejoin:round">
+                <!-- headstock -->
+                <rect x="50" y="6" width="20" height="28" rx="4"/>
+                <circle cx="46" cy="13" r="1.6"/><circle cx="46" cy="21" r="1.6"/><circle cx="46" cy="29" r="1.6"/>
+                <circle cx="74" cy="13" r="1.6"/><circle cx="74" cy="21" r="1.6"/><circle cx="74" cy="29" r="1.6"/>
+                <!-- nut + neck -->
+                <line x1="52" y1="35" x2="68" y2="35"/>
+                <rect x="54" y="35" width="12" height="120"/>
+                <line x1="54" y1="60" x2="66" y2="60"/>
+                <line x1="54" y1="86" x2="66" y2="86"/>
+                <line x1="54" y1="112" x2="66" y2="112"/>
+                <line x1="54" y1="138" x2="66" y2="138"/>
+                <!-- body -->
+                <ellipse cx="60" cy="170" rx="38" ry="34"/>
+                <ellipse cx="60" cy="218" rx="50" ry="56"/>
+                <!-- rosette -->
+                <circle cx="60" cy="205" r="21" style="stroke-width:1; opacity:0.55"/>
+                <!-- bridge -->
+                <rect x="47" y="232" width="26" height="6" rx="2"/>
+              </g>
+              <!-- soundhole -->
+              <circle cx="60" cy="205" r="17" style="fill:var(--ink); opacity:0.18; stroke:none"/>
+              <!-- strings (these vibrate) -->
+              <g class="strings" style="stroke:var(--gold-bright); stroke-width:0.85; fill:none">
+                <line class="gstring" x1="53" y1="35" x2="50" y2="235"/>
+                <line class="gstring" x1="55.5" y1="35" x2="54" y2="235"/>
+                <line class="gstring" x1="58" y1="35" x2="58" y2="235"/>
+                <line class="gstring" x1="62" y1="35" x2="62" y2="235"/>
+                <line class="gstring" x1="64.5" y1="35" x2="66" y2="235"/>
+                <line class="gstring" x1="67" y1="35" x2="70" y2="235"/>
+              </g>
+            </svg>
+            <span class="note note-1">&#9834;</span>
+            <span class="note note-2">&#9835;</span>
+            <span class="note note-3">&#9833;</span>
+            <span class="note note-4">&#9836;</span>
+            <span class="note note-5">&#9834;</span>
+          </div>
+        </div>
+
+        <p class="essay-kicker">An existential (and slightly sophomoric) attempt at a dissertation of</p>
+        <h1 class="essay-title">Stairway to Heaven</h1>
+        <p class="essay-byline">by Led Zeppelin</p>
+        <p class="essay-subtitle">The horrors of having to choose, and the perils of over-intellectualising things.</p>
+        <p class="essay-meta"><time>June 2026</time> &middot; <span>Komal Mathur</span></p>
+      </header>
+
+      <div class="essay-body">
+
+        <p class="lede">This is not so much a dissertation of the lyrics themselves as a deeply personal and opinionated piece on where I find myself currently, with stray references to my enduring obsession with the global phenomenon by Led Zeppelin, Stairway to Heaven.</p>
+
+        <p>Just to preface, whether Robert Plant or Jimmy Page ever meant any of the nimiety of meanings fans and critics have found while immersed in the strong vocals and imagery of the song is beside the point. Take David Bowie&rsquo;s word for it: &ldquo;All art is unstable. Its meaning is not necessarily that implied by the author. There is no authoritative voice. There are only multiple readings.&rdquo;</p>
+
+        <p>I personally think they just happened to string together the words in a way that, coupled with their ungodly instrumentation and vocals, spoke to people on so many levels. And we have no way to know what they were on, given it was the 70s rock scene.</p>
+
+        <blockquote class="verse">
+          <p>Yes, there are two paths you can go by but in the long run, there&rsquo;s still time to change the road you&rsquo;re on. Your head is humming and it won&rsquo;t go, in case you don&rsquo;t know. The piper&rsquo;s calling you to join him.</p>
+        </blockquote>
+
+        <p>The sheer horror of being accountable to your future self with a decision made by your current self, who has limited ways to make an informed choice. The fear of regretting whatever you choose. Or maybe making the best of it. Is the key to just gain an optimistic attitude, or should you perhaps look back and learn? Which side should the pendulum swing?</p>
+
+        <p>I am currently at a crossroads, which forces me to introspect in a way I have perhaps avoided in the past. It necessitates that I &lsquo;know what I am&rsquo;. What my values are, what traits I possess innately, what drives me, and the hardest of them all perhaps &mdash; what I like doing. The more I think, the less I am. Such is the dilemma of the perpetual over-thinker. If you think long and hard about something, eventually you&rsquo;d be able to find ways to counter every thought or feeling you&rsquo;ve ever had (with the exception of a few &mdash; I call those my moral compass). In such a situation, how am I to ever recognise my gut feeling, or know what I like? All logic reaches an end, after which, I&rsquo;ve been told, decisions are made simply by an inner voice. I fear not knowing myself enough.</p>
+
+        <p class="aside-line">&lsquo;You don&rsquo;t know my mind, you don&rsquo;t know my kind&rsquo; &mdash; well, Red Hot Chili Peppers, neither do I.</p>
+
+        <p>I think I know what I&rsquo;m afraid of &mdash; becoming a cog in a wheel, losing my drive to succeed. And in a way, I can only fear something that I can prevent, otherwise the inevitability shouldn&rsquo;t come as a shock. So the fear itself tells me that some part of me still believes this is mine to avoid. But whether it is a generic dread, the kind everyone carries, or something specific to me, I have no way of knowing until I test it. Proving myself is the only experiment that returns the answer. And proving myself would in turn require a firm belief of already having proved myself. Thus, I need to make decisions with the mindset that, in a later timeframe, I&rsquo;ve already achieved them.</p>
+
+        <p>Now a question arises: what must I inculcate in myself to breed such a mindset? Is all that it calls for a big ego and a narcissistic, greater-than-thou attitude? But it has to be deeper than a need to prove myself to others. Something about the mountain I am climbing for myself, not for others to see that I&rsquo;m climbing it. My values tell me, narcissism is probably not the answer. Then is it discipline and consistency? Just the ability to show up, regardless of result. <span class="commit">commit. commit. And commit again.</span> But what about burning out? Is passion somehow involved? What is passion? Are you meant for something, or do you choose your path? Are you but a deterministic output of all the rooms you&rsquo;ve been in, the people you&rsquo;ve met, the conversations you&rsquo;ve had, the opinions and thoughts you&rsquo;ve heard? <span class="cry">OR IS THERE SOMETHING MORE.</span></p>
+
+        <blockquote class="verse">
+          <p>And as we wind down the road, our shadows taller than our soul, there walks a lady we all know, who shines white light and wants to show, how everything still turns to gold. And if you listen very hard, the tune will come to you at last. To be a rock and not to roll.</p>
+        </blockquote>
+
+        <p>And I don&rsquo;t just say all this. Somewhere interspersed between the sophomoric musings and the lyrics, I believe I have been able to capture a part of the problem, which I don&rsquo;t claim to be unique to me. In fact, far from it. Decision-making has always been a human problem. As for whether there is something more &mdash; I&rsquo;m no longer sure that&rsquo;s a question thinking can answer. Maybe the something more is not found by thinking at all, but in the doing. So maybe the solution, in some cases, is to just stop thinking and start doing. &lsquo;Just do it&rsquo;.</p>
+
+        <div class="fin">&#10038;&nbsp;&#9834;&nbsp;&#10038;</div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:komlixmathur@gmail.com">Email</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://linkedin.com/in/komal-mathur" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://github.com/komalboyo" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://x.com/KomalBoyo" target="_blank" rel="noopener noreferrer">X</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Komal Mathur</p>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="stairway.js"></script>
+</body>
+</html>

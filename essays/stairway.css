@@ -1,0 +1,437 @@
+/* ============================================================
+   Stairway to Heaven — bespoke illuminated-manuscript styling
+   Scoped to body.stairway so it never touches other pages.
+   Inherits the site's 3 themes (light / dark / disco).
+   ============================================================ */
+
+body.stairway {
+  /* manuscript palette — light (warm parchment + dawn) */
+  --page: #f3e8cd;
+  --page-2: #efe1bf;
+  --page-edge: #ddc89a;
+  --ink: #2c2415;
+  --ink-soft: #5d5034;
+  --ink-faint: #8a7c5d;
+  --gold: #9a7521;
+  --gold-bright: #c69a32;
+  --sky-top: #d9c8a0;
+  --sky-mid: #efe6cd;
+  --sky-glow: rgba(255, 244, 214, 0.9);
+  --mtn-far: #c3b48f;
+  --mtn-near: #a8966c;
+  --star: rgba(120, 100, 60, 0);
+
+  background: var(--sky-mid);
+  color: var(--ink);
+}
+
+[data-theme="dark"] body.stairway {
+  /* mystical black + gold night */
+  --page: #15120b;
+  --page-2: #1b1710;
+  --page-edge: #3a3019;
+  --ink: #e9dcb8;
+  --ink-soft: #b6a983;
+  --ink-faint: #8a7e5c;
+  --gold: #c9a13a;
+  --gold-bright: #edc450;
+  --sky-top: #04050a;
+  --sky-mid: #0a0a12;
+  --sky-glow: rgba(237, 196, 80, 0.16);
+  --mtn-far: #161823;
+  --mtn-near: #0d0e16;
+  --star: rgba(255, 248, 222, 0.9);
+
+  background: var(--sky-mid);
+}
+
+[data-theme="disco"] body.stairway {
+  --page: #0c0a14;
+  --page-2: #110d1c;
+  --page-edge: #2a1a3e;
+  --ink: #ece7f6;
+  --ink-soft: #b6aed0;
+  --ink-faint: #8a82a6;
+  --gold: #00ffd5;
+  --gold-bright: #ff2d95;
+  --sky-top: #05030a;
+  --sky-mid: #08060f;
+  --sky-glow: rgba(255, 45, 149, 0.18);
+  --mtn-far: #160d24;
+  --mtn-near: #0a0612;
+  --star: rgba(0, 255, 213, 0.9);
+
+  background: var(--sky-mid);
+}
+
+/* ---------- Atmospheric scene (fixed, behind everything) ---------- */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 50% 30%, var(--sky-glow) 0%, transparent 60%),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%);
+}
+
+.scene svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scene .mtn-far { fill: var(--mtn-far); opacity: 0.85; }
+.scene .mtn-near { fill: var(--mtn-near); }
+.scene .stair { fill: none; stroke: var(--gold); stroke-width: 1.5; opacity: 0.35; }
+.scene .halo { fill: var(--sky-glow); }
+
+.scene .star {
+  fill: var(--star);
+  animation: twinkle 4s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+/* glow pulse over the summit */
+.scene .summit-glow {
+  transform-origin: center;
+  animation: glowPulse 9s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* ---------- Header: glassy so the scene shows through ---------- */
+.stairway .site-header {
+  background: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease;
+}
+.stairway .site-header .km-logo,
+.stairway .nav-links a,
+.stairway .theme-toggle { color: var(--ink-soft); }
+.stairway .logo-link { color: var(--ink); }
+.stairway .nav-links a:hover,
+.stairway .theme-toggle:hover { color: var(--gold); }
+
+/* ---------- The parchment page ---------- */
+.stairway main {
+  max-width: 720px;
+}
+
+.manuscript {
+  position: relative;
+  margin-top: 8px;
+  padding: 56px clamp(22px, 6vw, 64px) 64px;
+  background:
+    linear-gradient(180deg, var(--page) 0%, var(--page-2) 100%);
+  border: 1px solid var(--page-edge);
+  border-radius: 3px;
+  box-shadow:
+    0 1px 0 var(--gold) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+/* faint aged grain on the page */
+.manuscript::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+[data-theme="dark"] .manuscript::before,
+[data-theme="disco"] .manuscript::before { mix-blend-mode: screen; opacity: 0.06; }
+
+/* thin inner gold rule */
+.manuscript::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+/* ---------- Hero ---------- */
+.manuscript-hero {
+  text-align: center;
+  margin-bottom: 44px;
+  position: relative;
+}
+
+.stairway .essay-back {
+  color: var(--ink-faint);
+  text-align: left;
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+.stairway .essay-back:hover { color: var(--gold); }
+
+.essay-kicker {
+  font-family: 'Cormorant Garamond', 'Newsreader', serif;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+  margin: 8px auto 6px;
+  max-width: 32ch;
+  line-height: 1.5;
+}
+
+.manuscript .essay-title {
+  font-family: 'Cinzel', 'Newsreader', serif;
+  font-weight: 700;
+  font-size: clamp(2.3rem, 9vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  margin: 2px 0 4px;
+  background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 55%, var(--ink-soft) 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+[data-theme="dark"] .manuscript .essay-title,
+[data-theme="disco"] .manuscript .essay-title {
+  text-shadow: 0 0 22px var(--sky-glow);
+}
+
+.essay-byline {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+
+.manuscript .essay-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  color: var(--ink-soft);
+  max-width: 34ch;
+  margin: 0 auto 18px;
+  line-height: 1.45;
+}
+
+.essay-meta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.essay-meta time { font-variant-numeric: tabular-nums; }
+
+/* ---------- The strumming guitar ---------- */
+.hero-illustration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.guitar {
+  position: relative;
+  width: clamp(108px, 15vw, 168px);
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+}
+.guitar-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: rotate(-16deg);
+  overflow: visible;
+}
+.guitar .soundhole-fill { fill: var(--page); }
+
+.gstring {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.guitar.strum .gstring { animation: stringVibe 0.6s ease-out; }
+.guitar.strum .gstring:nth-child(1) { animation-delay: 0s; }
+.guitar.strum .gstring:nth-child(2) { animation-delay: 0.05s; }
+.guitar.strum .gstring:nth-child(3) { animation-delay: 0.1s; }
+.guitar.strum .gstring:nth-child(4) { animation-delay: 0.15s; }
+.guitar.strum .gstring:nth-child(5) { animation-delay: 0.2s; }
+.guitar.strum .gstring:nth-child(6) { animation-delay: 0.25s; }
+
+@keyframes stringVibe {
+  0% { transform: translateX(0); }
+  18% { transform: translateX(-1.3px); }
+  36% { transform: translateX(1px); }
+  54% { transform: translateX(-0.7px); }
+  72% { transform: translateX(0.4px); }
+  100% { transform: translateX(0); }
+}
+
+/* floating notes */
+.note {
+  position: absolute;
+  left: 52%;
+  top: 64%;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: var(--gold-bright);
+  opacity: 0;
+  pointer-events: none;
+  text-shadow: 0 0 10px var(--sky-glow);
+  will-change: transform, opacity;
+}
+.note-1 { --dx: -34px; --rot: -18deg; font-size: 1.1rem; animation: noteFloat 4.2s ease-in-out infinite; animation-delay: 0.2s; }
+.note-2 { --dx: 26px; --rot: 16deg; animation: noteFloat 4.8s ease-in-out infinite; animation-delay: 1.1s; }
+.note-3 { --dx: -14px; --rot: -8deg; font-size: 0.8rem; animation: noteFloat 5.2s ease-in-out infinite; animation-delay: 2s; }
+.note-4 { --dx: 40px; --rot: 22deg; font-size: 1.2rem; animation: noteFloat 4.5s ease-in-out infinite; animation-delay: 2.8s; }
+.note-5 { --dx: 8px; --rot: 10deg; animation: noteFloat 5s ease-in-out infinite; animation-delay: 3.6s; }
+
+@keyframes noteFloat {
+  0% { opacity: 0; transform: translate(-50%, 0) scale(0.6) rotate(0deg); }
+  12% { opacity: 0.95; }
+  70% { opacity: 0.8; }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), -130px) scale(1.15) rotate(var(--rot)); }
+}
+
+/* ---------- Body type ---------- */
+.manuscript .essay-body {
+  font-family: 'Cormorant Garamond', 'Newsreader', serif;
+}
+.manuscript .essay-body p {
+  font-size: clamp(1.12rem, 2.6vw, 1.32rem);
+  line-height: 1.72;
+  color: var(--ink);
+  margin-bottom: 22px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+.manuscript .essay-body p em { color: var(--ink); font-style: italic; }
+
+/* illuminated drop cap on the opening paragraph */
+.manuscript .essay-body p.lede::first-letter {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  float: left;
+  font-size: 4.6rem;
+  line-height: 0.78;
+  padding: 6px 12px 0 0;
+  margin-top: 4px;
+  color: var(--gold);
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.manuscript .essay-body p.lede { text-align: left; }
+
+/* illuminated verse (the lyrics) */
+.verse {
+  position: relative;
+  margin: 34px auto;
+  max-width: 92%;
+  padding: 22px 28px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+.verse::before,
+.verse::after {
+  content: "\201C";
+  position: absolute;
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--gold);
+  opacity: 0.5;
+  line-height: 1;
+}
+.verse::before { top: -2px; left: 6px; }
+.verse::after { content: "\201D"; bottom: -18px; right: 10px; }
+.verse p {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: italic;
+  text-align: center !important;
+  hyphens: none !important;
+  font-size: clamp(1.1rem, 2.7vw, 1.34rem) !important;
+  line-height: 1.8 !important;
+  color: var(--ink-soft) !important;
+  margin: 0 !important;
+}
+
+/* the RHCP aside */
+.aside-line {
+  text-align: center !important;
+  font-style: italic;
+  color: var(--ink-faint) !important;
+  hyphens: none !important;
+  font-size: clamp(1rem, 2.5vw, 1.18rem) !important;
+}
+
+/* in-text illuminations */
+.commit {
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  font-weight: 600;
+}
+.cry {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--gold);
+  text-shadow: 0 0 18px var(--sky-glow);
+}
+
+/* closing flourish */
+.fin {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--gold);
+  font-size: 1.4rem;
+  letter-spacing: 0.5em;
+  opacity: 0.7;
+}
+
+/* ---------- Footer over the scene ---------- */
+.stairway footer {
+  max-width: 720px;
+  border-top-color: var(--page-edge);
+}
+.stairway .footer-links a { color: var(--ink-soft); }
+.stairway .footer-links a:hover { color: var(--gold); }
+.stairway .footer-copy,
+.stairway .footer-dot { color: var(--ink-faint); }
+
+/* ---------- Motion off ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .note { display: none; }
+  .scene .star,
+  .scene .summit-glow { animation: none; }
+  .guitar.strum .gstring { animation: none; }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .manuscript { padding: 44px 20px 48px; }
+  .manuscript .essay-body p { text-align: left; hyphens: none; }
+  .stairway .essay-back { position: static; display: block; margin-bottom: 18px; }
+  .manuscript-hero { margin-bottom: 32px; }
+}
