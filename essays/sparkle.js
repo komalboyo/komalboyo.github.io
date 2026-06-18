@@ -3,6 +3,8 @@
 // of radiating sparks. Theme-aware, pointer-events none, off under reduced-motion.
 (function () {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // desktop only: keep phones clean (every tap would otherwise burst)
+  if (window.matchMedia && (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches)) return;
 
   var canvas = document.createElement('canvas');
   canvas.id = 'sparkle-canvas';

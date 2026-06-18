@@ -4,6 +4,8 @@
 // Theme-aware, pointer-events none, off under reduced-motion.
 (function () {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // desktop only: no cursor on phones/tablets, so skip the follower entirely
+  if (window.matchMedia && (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches)) return;
 
   var canvas = document.createElement('canvas');
   canvas.id = 'walker-canvas';
