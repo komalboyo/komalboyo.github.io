@@ -143,31 +143,37 @@
   }
 
   // ---------------- cinematic entrance ----------------
+  function ensureClothFilter() {
+    if (document.getElementById('dwm-cloth-svg')) return;
+    var holder = document.createElement('div');
+    holder.id = 'dwm-cloth-svg';
+    holder.setAttribute('aria-hidden', 'true');
+    holder.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden;';
+    holder.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg"><defs>' +
+      '<filter id="dwmCloth" x="-20%" y="-20%" width="140%" height="140%">' +
+      '<feTurbulence type="fractalNoise" baseFrequency="0.006 0.026" numOctaves="2" seed="4" result="n">' +
+      '<animate attributeName="seed" from="1" to="80" dur="7s" repeatCount="indefinite"/></feTurbulence>' +
+      '<feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/>' +
+      '</filter></defs></svg>';
+    document.body.appendChild(holder);
+  }
+
   function playEntrance() {
     if (reduced) return;
+    whoosh();
+    ensureClothFilter();
     var stage = document.createElement('div');
-    stage.className = 'dwm-scroll-stage';
+    stage.className = 'dwm-fling-stage';
     stage.innerHTML =
-      '<div class="dwm-rod dwm-rod-l"></div>' +
-      '<div class="dwm-parchment">' +
-        '<div class="dwm-scene"><div class="dwm-ring">' +
-          '<span class="dwm-glyph">龍</span><span class="dwm-seal">勇</span>' +
-        '</div></div>' +
-        '<div class="dwm-shine"></div>' +
-        '<div class="dwm-title">DRAGON WARRIOR MODE</div>' +
-      '</div>' +
-      '<div class="dwm-rod dwm-rod-r"></div>';
+      '<div class="dwm-streak"></div>' +
+      '<div class="dwm-fling">' +
+        '<div class="dwm-cloth"><span class="dwm-glyph">龍</span><span class="dwm-fling-title">DRAGON WARRIOR</span></div>' +
+        '<span class="dwm-rod dwm-rod-l"></span>' +
+        '<span class="dwm-rod dwm-rod-r"></span>' +
+      '</div>';
     document.body.appendChild(stage);
-    for (var i = 0; i < 16; i++) {
-      var e = document.createElement('div'); e.className = 'dwm-ember';
-      e.style.left = (Math.random() * 100) + 'vw';
-      e.style.setProperty('--ex', ((Math.random() - 0.5) * 140) + 'px');
-      e.style.animationDuration = (2.4 + Math.random() * 2.6) + 's';
-      e.style.animationDelay = (0.8 + Math.random() * 1.4) + 's';
-      stage.appendChild(e);
-    }
-    requestAnimationFrame(function () { requestAnimationFrame(function () { stage.classList.add('open'); }); });
-    setTimeout(function () { stage.classList.add('done'); }, 2700);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { stage.classList.add('go'); }); });
     setTimeout(function () { if (stage.parentNode) stage.parentNode.removeChild(stage); }, 3500);
   }
 

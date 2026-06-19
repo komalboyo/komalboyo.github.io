@@ -89,37 +89,56 @@
 
         <div class="hero-illustration">
           <div class="guitar" title="strum">
-            <svg class="guitar-svg" viewBox="0 0 120 290" xmlns="http://www.w3.org/2000/svg">
-              <g class="guitar-art" style="stroke:var(--gold); stroke-width:1.6; fill:none; stroke-linecap:round; stroke-linejoin:round">
-                <!-- headstock -->
-                <rect x="50" y="6" width="20" height="28" rx="4"/>
-                <circle cx="46" cy="13" r="1.6"/><circle cx="46" cy="21" r="1.6"/><circle cx="46" cy="29" r="1.6"/>
-                <circle cx="74" cy="13" r="1.6"/><circle cx="74" cy="21" r="1.6"/><circle cx="74" cy="29" r="1.6"/>
-                <!-- nut + neck -->
-                <line x1="52" y1="35" x2="68" y2="35"/>
-                <rect x="54" y="35" width="12" height="120"/>
-                <line x1="54" y1="60" x2="66" y2="60"/>
-                <line x1="54" y1="86" x2="66" y2="86"/>
-                <line x1="54" y1="112" x2="66" y2="112"/>
-                <line x1="54" y1="138" x2="66" y2="138"/>
-                <!-- body -->
-                <ellipse cx="60" cy="170" rx="38" ry="34"/>
-                <ellipse cx="60" cy="218" rx="50" ry="56"/>
-                <!-- rosette -->
-                <circle cx="60" cy="205" r="21" style="stroke-width:1; opacity:0.55"/>
-                <!-- bridge -->
-                <rect x="47" y="232" width="26" height="6" rx="2"/>
+            <svg class="guitar-svg" viewBox="0 0 130 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gtrWood" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#dab271"/>
+                  <stop offset="0.45" stop-color="#a9712f"/>
+                  <stop offset="1" stop-color="#5d3813"/>
+                </linearGradient>
+                <linearGradient id="gtrNeck" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#3a2410"/>
+                  <stop offset="1" stop-color="#21140a"/>
+                </linearGradient>
+                <radialGradient id="gtrHole" cx="0.5" cy="0.42" r="0.62">
+                  <stop offset="0" stop-color="#150b03"/>
+                  <stop offset="0.72" stop-color="#2c1b0a"/>
+                  <stop offset="1" stop-color="#5a3a16"/>
+                </radialGradient>
+              </defs>
+              <!-- headstock + tuners -->
+              <path d="M53 36 L53 13 Q53 5 61 5 L69 5 Q77 5 77 13 L77 36 Z" fill="url(#gtrNeck)" stroke="#e7c87a" stroke-width="1.4"/>
+              <g fill="#e7c87a">
+                <circle cx="49" cy="13" r="2.2"/><circle cx="49" cy="21" r="2.2"/><circle cx="49" cy="29" r="2.2"/>
+                <circle cx="81" cy="13" r="2.2"/><circle cx="81" cy="21" r="2.2"/><circle cx="81" cy="29" r="2.2"/>
               </g>
-              <!-- soundhole -->
-              <circle cx="60" cy="205" r="17" style="fill:var(--ink); opacity:0.18; stroke:none"/>
+              <!-- fretboard -->
+              <rect x="57" y="36" width="16" height="116" fill="url(#gtrNeck)" stroke="#e7c87a" stroke-width="1.4"/>
+              <line x1="57" y1="37.5" x2="73" y2="37.5" stroke="#f3e3b0" stroke-width="2.2"/>
+              <g stroke="#c9a24a" stroke-width="0.9">
+                <line x1="57" y1="60" x2="73" y2="60"/><line x1="57" y1="82" x2="73" y2="82"/>
+                <line x1="57" y1="104" x2="73" y2="104"/><line x1="57" y1="126" x2="73" y2="126"/><line x1="57" y1="148" x2="73" y2="148"/>
+              </g>
+              <g fill="#f0e0b0"><circle cx="65" cy="93" r="1.5"/><circle cx="65" cy="137" r="1.5"/></g>
+              <!-- body -->
+              <path d="M65 150 C 86 150 99 164 99 186 C 99 202 89 206 87 216 C 86 224 88 230 92 238 C 102 252 110 266 106 279 C 101 293 84 297 65 297 C 46 297 29 293 24 279 C 20 266 28 252 38 238 C 42 230 44 224 43 216 C 41 206 31 202 31 186 C 31 164 44 150 65 150 Z" fill="url(#gtrWood)" stroke="#e7c87a" stroke-width="2.4"/>
+              <!-- pickguard -->
+              <path d="M82 196 q12 7 8 26 q-6 11 -15 8 q-6 -3 -3 -13 q3 -17 10 -21 Z" fill="#2a1a0c" opacity="0.45"/>
+              <!-- rosette + soundhole -->
+              <circle cx="65" cy="200" r="19" fill="none" stroke="#e7c87a" stroke-width="2"/>
+              <circle cx="65" cy="200" r="15.5" fill="none" stroke="#caa14a" stroke-width="1"/>
+              <circle cx="65" cy="200" r="13.5" fill="url(#gtrHole)"/>
+              <!-- bridge + pins -->
+              <rect x="48" y="247" width="34" height="10" rx="3" fill="#2a1a0c" stroke="#e7c87a" stroke-width="1.2"/>
+              <g fill="#f0e0b0"><circle cx="54" cy="252" r="1.2"/><circle cx="59" cy="252" r="1.2"/><circle cx="64" cy="252" r="1.2"/><circle cx="69" cy="252" r="1.2"/><circle cx="74" cy="252" r="1.2"/><circle cx="79" cy="252" r="1.2"/></g>
               <!-- strings (these vibrate) -->
-              <g class="strings" style="stroke:var(--gold-bright); stroke-width:0.85; fill:none">
-                <line class="gstring" x1="53" y1="35" x2="50" y2="235"/>
-                <line class="gstring" x1="55.5" y1="35" x2="54" y2="235"/>
-                <line class="gstring" x1="58" y1="35" x2="58" y2="235"/>
-                <line class="gstring" x1="62" y1="35" x2="62" y2="235"/>
-                <line class="gstring" x1="64.5" y1="35" x2="66" y2="235"/>
-                <line class="gstring" x1="67" y1="35" x2="70" y2="235"/>
+              <g class="strings" stroke="#f3e08a" stroke-width="0.8" fill="none">
+                <line class="gstring" x1="58.5" y1="37" x2="54" y2="251"/>
+                <line class="gstring" x1="60.5" y1="37" x2="58.5" y2="251"/>
+                <line class="gstring" x1="62.5" y1="37" x2="63" y2="251"/>
+                <line class="gstring" x1="64.5" y1="37" x2="67.5" y2="251"/>
+                <line class="gstring" x1="66.5" y1="37" x2="72" y2="251"/>
+                <line class="gstring" x1="68.5" y1="37" x2="76" y2="251"/>
               </g>
             </svg>
             <span class="note note-1">&#9834;</span>
@@ -187,5 +206,6 @@
 
   <script src="../script.js"></script>
   <script src="stairway.js"></script>
+  <script src="../dragon-mode.js"></script>
 </body>
 </html>

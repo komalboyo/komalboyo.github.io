@@ -249,8 +249,12 @@ body.stairway {
 }
 .guitar {
   position: relative;
-  width: clamp(108px, 15vw, 168px);
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+  width: clamp(134px, 17vw, 204px);
+  filter: drop-shadow(0 7px 18px rgba(0, 0, 0, 0.28));
+  transition: filter 0.45s ease;
+}
+.guitar.strum {
+  filter: drop-shadow(0 7px 18px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 18px var(--gold-bright));
 }
 .guitar-svg {
   width: 100%;
@@ -434,4 +438,18 @@ body.stairway {
   .manuscript .essay-body p { text-align: left; hyphens: none; }
   .stairway .essay-back { position: static; display: block; margin-bottom: 18px; }
   .manuscript-hero { margin-bottom: 32px; }
+}
+
+/* ===== Stairway in Dragon Warrior Mode ===== */
+[data-dragon="on"] body.stairway {
+  /* force the warm parchment palette so the scroll stays readable in any theme */
+  --page: #efe1bf; --page-2: #e7d9b4; --page-edge: #c8a23a;
+  --ink: #2c2415; --ink-soft: #5b4f38; --ink-faint: #8a7c5d;
+  --gold: #9a7521; --gold-bright: #c69a32;
+  background: radial-gradient(125% 95% at 50% -10%, #14564a 0%, #0a3a30 38%, #052019 78%, #03130f 100%) !important;
+}
+[data-dragon="on"] .scene { display: none !important; }
+[data-dragon="on"] .manuscript {
+  border-color: rgba(200, 160, 60, 0.6);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.5), 0 1px 0 var(--gold) inset;
 }
